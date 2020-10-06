@@ -11,8 +11,9 @@ public abstract class RequestHandler {
 
     public abstract String handleRequest (HttpServletRequest request, HttpServletResponse response);
 
-    public void setModel (PersonService countryService) {
-        this.service = countryService;
+    public void setModel (PersonService service) {
+
+        this.service = service;
     }
 
     public PersonService getService() {

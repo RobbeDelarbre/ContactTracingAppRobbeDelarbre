@@ -29,7 +29,7 @@ public class Servlet extends HttpServlet {
 
     private void processRequest (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String command = request.getParameter("command");
-        String destination = "index.html";
+        String destination = "index.jsp";
         if (command != null) {
             try {
                 RequestHandler handler = handlerFactory.getHandler(command, service);
