@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,18 +23,29 @@ User Overview
 </h2>
 
 </header><main>
-<table>
-<tr>
-<th>E-mail</th>
-<th>First Name</th>
-<th>Last Name</th>
-</tr>
-<tr>
-<td>jan.janssens@hotmail.com</td><td>Jan</td><td>Janssens</td>
-</tr>
 
-<caption>Users Overview</caption>
-</table>
+    <c:choose>
+        <c:when test="${people.size() <= 0}">
+            <p>Error: de database is leeg.</p>
+        </c:when>
+        <c:otherwise>
+            <table>
+                <tr>
+                    <th>E-mail</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                <c:forEach var="person" items="${people}">
+                    <tr>
+                        <td>${person.email}</td>
+<%--                        <td>${person.firstname}</td>--%>
+<%--                        <td>${person.lastname}</td>--%>
+                    </tr>
+                </c:forEach>
+                <caption>Users Overview</caption>
+            </table>
+        </c:otherwise>
+    </c:choose>
 </main>
 <footer>
 &copy; Webontwikkeling 3, UC Leuven-Limburg

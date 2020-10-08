@@ -30,7 +30,7 @@ Register
 		</ul>
 	</div>
 
-    <form novalidate="novalidate">
+    <form method="post" action="Servlet?command=Add" novalidate="novalidate">
     	<!-- novalidate in order to be able to run tests correctly -->
         <p><label for="userid">User id</label><input type="text" id="userid" name="userid"
          required > </p>
