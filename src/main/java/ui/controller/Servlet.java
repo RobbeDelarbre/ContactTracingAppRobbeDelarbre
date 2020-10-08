@@ -1,13 +1,13 @@
 package ui.controller;
 
+import domain.db.PersonService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import domain.db.PersonService;
 
 @WebServlet("/Servlet")
 public class Servlet extends HttpServlet {
@@ -29,7 +29,7 @@ public class Servlet extends HttpServlet {
 
     private void processRequest (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String command = request.getParameter("command");
-        String destination = "index.jsp";
+        String destination = "Servlet?command=Home";
         if (command != null) {
             try {
                 RequestHandler handler = handlerFactory.getHandler(command, service);
