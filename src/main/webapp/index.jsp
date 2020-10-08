@@ -10,20 +10,9 @@
 </head>
 <body>
 	<div id="container">
-		<header>
-			<h1>
-				<span>XXX</span>
-			</h1>
-			<nav>
-				<ul>
-					<li id="actual"><a href="Servlet">Home</a></li>
-					<li><a href="Servlet?command=Overview">Overview</a></li>
-					<li><a href="Servlet?command=Register">Register</a></li>
-				</ul>
-			</nav>
-			<h2>Home</h2>
-
-		</header>
+	<jsp:include page="header.jsp">
+		<jsp:param name="page" value="Home"></jsp:param>
+	</jsp:include>
 		<main> Sed ut perspiciatis unde omnis iste natus error sit
 		voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
 		ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae

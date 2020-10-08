@@ -9,20 +9,10 @@
 </head>
 <body>
 <div id="container">
-<header>
-<h1><span>XXX</span></h1>
-<nav>
-<ul>
-<li><a href="Servlet">Home</a></li>
-<li id="actual"><a href="Servlet?command=Overview">Overview</a></li>
-<li><a href="Servlet?command=Register">Register</a></li>
-</ul>
-</nav>
-<h2>
-User Overview
-</h2>
-
-</header><main>
+    <jsp:include page="header.jsp">
+        <jsp:param name="page" value="Overview"></jsp:param>
+    </jsp:include>
+    <main>
 
     <c:choose>
         <c:when test="${people.size() <= 0}">
@@ -38,8 +28,8 @@ User Overview
                 <c:forEach var="person" items="${people}">
                     <tr>
                         <td>${person.email}</td>
-<%--                        <td>${person.firstname}</td>--%>
-<%--                        <td>${person.lastname}</td>--%>
+                        <td>${person.firstName}</td>
+                        <td>${person.lastName}</td>
                     </tr>
                 </c:forEach>
                 <caption>Users Overview</caption>

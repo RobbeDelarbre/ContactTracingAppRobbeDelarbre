@@ -22,13 +22,13 @@ public class Add extends RequestHandler {
         if (errors.size() == 0){
             try {
                 service.add(p);
-                return "Servlet?command=overview";
+                return "Servlet?command=Overview";
             } catch (Exception e) {
                 errors.add(e.getMessage());
             }
         }
         request.setAttribute("errors", errors);
-        return "Servlet?command=register";
+        return "Servlet?command=Register";
     }
 
     private void setPEmail(Person p, HttpServletRequest request, List<String> errors) {
@@ -43,29 +43,29 @@ public class Add extends RequestHandler {
     }
 
     private void setPFirstname(Person p, HttpServletRequest request, List<String> errors) {
-        String firstname = request.getParameter("firstname");
+        String firstname = request.getParameter("firstName");
 
         try{
             p.setFirstName(firstname);
-            request.setAttribute("firstnamePrevious", firstname);
+            request.setAttribute("firstNamePrevious", firstname);
         } catch (Exception e){
             errors.add(e.getMessage());
         }
     }
 
     private void setPLastname(Person p, HttpServletRequest request, List<String> errors) {
-        String lastname = request.getParameter("lastname");
+        String lastname = request.getParameter("lastName");
 
         try {
             p.setLastName(lastname);
-            request.setAttribute("lastnamePrevious", lastname);
+            request.setAttribute("lastNamePrevious", lastname);
         } catch (Exception e){
             errors.add(e.getMessage());
         }
     }
 
     private void setPPassword(Person p, HttpServletRequest request, List<String> errors) {
-        String password = request.getParameter("parameter");
+        String password = request.getParameter("password");
 
         try{
             p.setPassword(password);

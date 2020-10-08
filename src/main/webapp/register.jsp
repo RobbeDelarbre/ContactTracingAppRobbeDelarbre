@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,37 +11,32 @@
 </head>
 <body>
 <div id="container">
-<header>
-<h1><span>XXX</span></h1>
-<nav>
-<ul>
-<li><a href="Servlet">Home</a></li>
-<li><a href="Servlet?command=Overview">Overview</a></li>
-<li id="actual"><a href="Servlet?command=Register">Register</a></li>
-</ul>
-</nav>
-<h2>
-Register
-</h2>
+    <jsp:include page="header.jsp">
+        <jsp:param name="page" value="Register"></jsp:param>
+    </jsp:include>
+    <main>
 
-</header><main>
-	<div class="alert-danger">
-		<ul>
-			<li>Some error</li>
-		</ul>
-	</div>
+        <c:if test="${errors.size() > 0}">
+            <div class="alert-danger">
+                <ul>
+                    <c:forEach var="e" items="${errors}">
+                        <li>${e}</li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </c:if>
 
     <form method="post" action="Servlet?command=Add" novalidate="novalidate">
     	<!-- novalidate in order to be able to run tests correctly -->
         <p><label for="userid">User id</label><input type="text" id="userid" name="userid"
-         required > </p>
+         required value="${userIdPrevious}"> </p>
         <p><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName"
-         required value=""> </p>
+         required value="${firstNamePrevious}"> </p>
         <p><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName"
-         required> </p>
-        <p><label for="email">Email</label><input type="email" id="email" name="email" required></p>
+         required value="${lastNamePrevious}"> </p>
+        <p><label for="email">Email</label><input type="email" id="email" name="email" required value="${emailPrevious}"></p>
         <p><label for="password">Password</label><input type="password" id="password"  name="password"
-         required> </p>
+         required value="${passwordPrevious}"> </p>
         <p><input type="submit" id="signUp" value="Sign Up"></p>
         
     </form>
