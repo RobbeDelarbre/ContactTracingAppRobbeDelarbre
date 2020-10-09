@@ -13,6 +13,9 @@ public class PersonService {
 	public PersonService () {
 		Person administrator = new Person("admin", "admin@ucll.be", "t", "Ad", "Ministrator");
 		add(administrator);
+		//testpersoon
+		Person t = new Person("t", "t@t.com", "t", "t", "t");
+		add(t);
 	}
 	
 	public Person get(String personId){
