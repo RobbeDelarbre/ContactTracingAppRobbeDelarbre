@@ -22,6 +22,10 @@
                     <br>Achternaam: ${user.lastName}
                     <br>Email: ${user.email}
                 </p>
+
+                <form method="post" action="Servlet?command=DeleteAccount">
+                    <p><input type="submit" value="Delete your account!"></p>
+                </form>
             </c:when>
             <c:otherwise>
                 <h3>U bent niet ingelogd ga terug naar het home scherm om in te loggen.</h3>
