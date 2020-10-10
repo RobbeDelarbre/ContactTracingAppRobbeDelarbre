@@ -9,6 +9,8 @@ body {
 	font-size: 90%;
 	color: #303d11;
 	background-color: #FFFFFF;
+	width: 98%;
+	height: 98%;
 }
 
 div#container {
@@ -21,7 +23,10 @@ footer {
 	background-color: #DE0128;
 	color: #FFF;
 	border-radius: 15px;
-	margin: 3px;
+	margin: 1%;
+	position: absolute;
+	bottom: 0;
+	width: 90%;
 }
 
 nav ul {
@@ -176,6 +181,7 @@ input {
 	}
 	footer {
 		text-align: right;
+		max-width: 1000px;
 	}
 	    .alert-danger {
         width: 614px;
