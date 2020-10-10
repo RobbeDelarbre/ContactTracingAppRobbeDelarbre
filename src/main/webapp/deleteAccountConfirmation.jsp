@@ -19,8 +19,8 @@
         <p>Deze actie kan niet meer ongedaan gemaakt worden.</p>
         <form method="post" action="Servlet?command=DeleteAccountFinal">
             <p>
-                <input type="submit" id="Ja" value="JA" name="submit">
-                <input type="submit" id="Nee" value="Nee" name="submit">
+                <input type="submit" id="ja" value="JA" name="ja">
+                <input type="submit" id="nee" value="Nee" name="nee">
             </p>
         </form>
     </main>

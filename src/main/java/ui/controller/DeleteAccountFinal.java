@@ -7,11 +7,11 @@ public class DeleteAccountFinal extends RequestHandler{
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        if (request.getParameter("submit").equals("Ja")){
+        if (request.getParameter("ja") != null){
             request.getSession().invalidate();
             return "accountDeletedConfirmation.jsp";
-        } else if (request.getParameter("submit").equals("Nee")){
-            return "index.jsp";
+        } else if (request.getParameter("nee") != null){
+            return "Servlet?command=Account";
         }
         return "index.jsp";
     }
