@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <header>
     <h1>
-        <span>XXX</span>
+        <span></span>
     </h1>
     <nav>
         <ul>
